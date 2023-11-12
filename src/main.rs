@@ -13,8 +13,8 @@ fn main() {
 #[derive(Serialize, Deserialize, Debug)]
 struct User {
     username: String,
-    game: String,
-    anime: Vec<String>
+    single_option: String,
+    multi_option: Vec<String>
 }
 
 fn App(cx: Scope) -> Element {
@@ -55,20 +55,20 @@ fn App(cx: Scope) -> Element {
                         class: "mb-2",
                         label {
                             class: "form-label",
-                            r#for: "game",
-                            "Game"
+                            r#for: "single_option",
+                            "Select single option"
                         }
                         select {
-                            id: "game",
-                            name: "game",
+                            id: "single_option",
+                            name: "single_option",
                             class: "form-select mb-2",
                             option {
-                                value: "assasins",
-                                "Assasins Creed",
+                                value: "option_one",
+                                "Option 1",
                             },
                             option {
-                                value: "cod",
-                                "Call of Duty"
+                                value: "option_two",
+                                "Option 2"
                             }
                         },
                     }
@@ -77,21 +77,21 @@ fn App(cx: Scope) -> Element {
                     div {
                         label {
                             class: "form-label mt-3",
-                            r#for: "anime",
-                            "Animes"
+                            r#for: "multi_option",
+                            "Select Multiple options"
                         },
                         select {
-                            id: "anime",
-                            name: "anime",
+                            id: "multi_select_option",
+                            name: "multi_option",
                             multiple: "true",
                             class: "form-select mt-2",
                             option {
-                                value: "dbz",
-                                "Dragon Ball"
+                                value: "multi_option_one",
+                                "Option 1"
                             },
                             option {
-                                value: "naruto",
-                                "Naruto"
+                                value: "multi_option_two",
+                                "Option 2"
                             }
                         }
                     }
