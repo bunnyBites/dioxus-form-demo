@@ -95,6 +95,8 @@ fn App(cx: Scope) -> Element {
                             }
                         }
                     }
+
+                    //submit button
                     button {
                         class: "btn btn-primary w-100 my-4",
                         r#type: "submit",
